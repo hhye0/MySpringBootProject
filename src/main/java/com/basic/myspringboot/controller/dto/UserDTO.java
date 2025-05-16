@@ -1,8 +1,7 @@
-package com.basic.myspringboot.Controller.dto;
+package com.basic.myspringboot.controller.dto;
 
 import com.basic.myspringboot.entity.User;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 

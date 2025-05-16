@@ -1,6 +1,6 @@
-package com.basic.myspringboot.Controller;
+package com.basic.myspringboot.controller;
 
-import com.basic.myspringboot.Controller.dto.UserDTO;
+import com.basic.myspringboot.controller.dto.UserDTO;
 import com.basic.myspringboot.entity.User;
 import com.basic.myspringboot.service.UserService;
 import jakarta.validation.Valid;

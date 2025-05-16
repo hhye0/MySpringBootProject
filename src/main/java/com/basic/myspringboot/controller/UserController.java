@@ -1,4 +1,4 @@
-package com.basic.myspringboot.Controller;
+package com.basic.myspringboot.controller;
 
 import com.basic.myspringboot.entity.User;
 import com.basic.myspringboot.repository.UserRepository;

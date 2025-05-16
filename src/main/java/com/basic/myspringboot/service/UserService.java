@@ -1,6 +1,6 @@
 package com.basic.myspringboot.service;
 
-import com.basic.myspringboot.Controller.dto.UserDTO;
+import com.basic.myspringboot.controller.dto.UserDTO;
 import com.basic.myspringboot.entity.User;
 import com.basic.myspringboot.exception.BusinessException;
 import com.basic.myspringboot.repository.UserRepository;
