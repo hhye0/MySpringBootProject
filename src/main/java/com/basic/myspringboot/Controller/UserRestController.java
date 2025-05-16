@@ -6,6 +6,7 @@ import com.basic.myspringboot.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,6 +25,12 @@ public class UserRestController {
 //        System.out.println(">>> UserController" + userRepository.getClass().getName());
 //        this.userRepository = userRepository;
 //    }
+
+    @GetMapping("/welcome")
+    public String welcome() {
+        return "Welcome this endpoint is not secure";
+    }
+
     //등록
     @PostMapping
     public User create(@RequestBody User user) {
@@ -32,10 +39,14 @@ public class UserRestController {
 
     //목록조회 GET
     @GetMapping
+    // 관리자 권한이 있는 사용자만 목록을 조회할 수 있음
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public List<User> getUsers() {
         return userRepository.findAll();
     }
 
+    // 일반 사용자 권한이 있는 사용자만 목록을 조회할 수 있음
+    @PreAuthorize("hasAuthority('ROLE_USER')")
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
         Optional<User> optionalUser = userRepository.findById(id);
